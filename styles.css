@@ -4,6 +4,10 @@ main {
     border:2px solid gray;
 }
 
+body {
+    font-family:Verdana, sans-serif;
+}
+
 .logo-and-header {
     display:flex;
     justify-content: center;
@@ -29,22 +33,6 @@ main {
     color:white;
 }
 
-body {
-    font-family:Verdana, sans-serif;
-}
-
-table{
-    margin: 3rem 0;
-    border-collapse: collapse; /*Removes border lines between the cells.*/ 
-    position: relative; /*This prevents table caption from changing its position in a 
-    table and also 3 caption elements will not overlap.*/
-    width:100%;  /*It is important to make it cover 100% of its container.*/
-}
-
-.description {
-    font-weight: normal;
-}
-
 .product-type {
     display:flex;
     justify-content: right;
@@ -57,6 +45,20 @@ table{
     z-index: 1; /*This prevents the product-type row from being overlapped by another row of the table.*/
 }
 
+table{
+    margin: 3rem 0;
+    border-collapse: collapse; /*Removes border lines between the cells.*/ 
+    position: relative; /*This prevents table caption from changing its position in a 
+    table and also 3 caption elements will not overlap.*/
+    width:100%;  /*It is important to make it cover 100% of its container.*/
+}
+
+.tables {
+    padding:0 1rem 0 1rem; /*Applies padding to container that is related with tables class. 
+    We need to apply padding to child element if we want to adjust alignment of any child 
+    element of this container. */
+}
+
 table caption {
     font-weight: bold;
     font-size:24px;
@@ -64,14 +66,18 @@ table caption {
     top:-2rem;
 }
 
-tr th {
-    text-align: left;
-    padding-left:0.5rem;
+.description {
+    font-weight: normal;
 }
 
 span.description {
     display:block;
     padding:0.75rem 0; 
+}
+
+tr th {
+    text-align: left;
+    padding-left:0.5rem;
 }
 
 tr.data{
@@ -95,16 +101,6 @@ tbody td {     /*Making sure that the datacells will have fixed width values.*/
     max-width: 5rem;
   }
   
-.tables {
-    padding:0 1rem 0 1rem; /*Applies padding to container that is related with tables class. 
-    We need to apply padding to child element if we want to adjust alignment of any child 
-    element of this container. */
-}
-
-table:last-of-type {
-    padding-bottom:-10rem;
-}
-
 tr.data td:nth-of-type(2) {
     padding-right:0.91rem;
 }
