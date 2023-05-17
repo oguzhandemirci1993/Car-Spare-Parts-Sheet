@@ -1,27 +1,36 @@
 main {
-    margin: 0 auto;
+    margin: 2rem auto;
     width:50rem;
     border:2px solid gray;
 }
 
-.main-header h2 {
+.logo-and-header {
     display:flex;
-    justify-content:column;
+    justify-content: center;
+    align-items: center; /*This centers text of the p element and padding values of texts overlap. 
+    That's why it eliminates unnecessary orange background that goes to bottom. Instead of this command, we can add 
+    height value of p element at ".logo-and-header p" */
 }
 
-.logo p{
-    margin:0;
-    text-align: left;
+.logo-and-header span {
+    display:block;
+    font-size:16px;
+    text-align: center;
+}
+
+.logo-and-header p{
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    text-align: center;
+    width:6rem;
+    background:linear-gradient()
+    font-weight: bold;
+    background:orange;
+    box-shadow: 0px 0px 20px 5px yellow;
+    color:white;
 }
 
 body {
     font-family:Verdana, sans-serif;
-}
-
-.table-header-alignment{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 table{
@@ -87,7 +96,13 @@ tbody td {     /*Making sure that the datacells will have fixed width values.*/
   }
   
 .tables {
-    padding:0 1rem 0 1rem;
+    padding:0 1rem 0 1rem; /*Applies padding to container that is related with tables class. 
+    We need to apply padding to child element if we want to adjust alignment of any child 
+    element of this container. */
+}
+
+table:last-of-type {
+    padding-bottom:-10rem;
 }
 
 tr.data td:nth-of-type(2) {
