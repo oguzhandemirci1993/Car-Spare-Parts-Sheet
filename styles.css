@@ -1,14 +1,12 @@
-.all-table-border {
-    margin:0 auto;
-    padding:1rem;
-    width:55em;
+main {
+    margin: 0 auto;
+    width:50rem;
     border:2px solid gray;
 }
 
 .main-header h2 {
     display:flex;
     justify-content:column;
-    color:orange;
 }
 
 .logo p{
@@ -26,8 +24,12 @@ body {
     align-items: center;
 }
 
-.table-alignment {
-    margin: 2rem 0;
+table{
+    margin: 3rem 0;
+    border-collapse: collapse; /*Removes border lines between the cells.*/ 
+    position: relative; /*This prevents table caption from changing its position in a 
+    table and also 3 caption elements will not overlap.*/
+    width:100%;  /*It is important to make it cover 100% of its container.*/
 }
 
 .description {
@@ -38,23 +40,64 @@ body {
     display:flex;
     justify-content: right;
     gap:1rem;
-    padding-right:0.5rem;
-    padding-top:0.25rem;
-    padding-bottom:0.25rem;
+    padding: 0.25rem 1.50rem 0.25rem 0;
     background:orange;
     color:white;
-    position:sticky;
-    top:0;
-    margin:0 -1rem;
+    position:sticky; 
+    top:0; 
+    z-index: 1; /*This prevents the product-type row from being overlapped by another row of the table.*/
 }
 
-caption {
+table caption {
     font-weight: bold;
-    color:orange;
     font-size:24px;
+    position:absolute;
+    top:-2rem;
 }
 
 tr th {
     text-align: left;
+    padding-left:0.5rem;
 }
 
+span.description {
+    display:block;
+    padding:0.75rem 0; 
+}
+
+tr.data{
+ background-image:linear-gradient(to bottom, orange 1.75rem, white 1.5rem);
+}
+
+tr.data:hover{
+    background-image:linear-gradient(to bottom, lightblue 1.75rem, white 1.5rem);
+    border:2px solid gray;
+    padding:2px;
+   }
+
+tr.data td {
+    vertical-align: top;
+    text-align: center;
+}
+  
+tbody td {     /*Making sure that the datacells will have fixed width values.*/
+    width: 100vw;
+    min-width: 5rem;
+    max-width: 5rem;
+  }
+  
+.tables {
+    padding:0 1rem 0 1rem;
+}
+
+tr.data td:nth-of-type(2) {
+    padding-right:0.91rem;
+}
+
+tr.data td:first-of-type {
+    padding-right:0.91rem;
+}
+
+tr.data td:last-of-type {
+    padding-right:0.91rem;
+}
